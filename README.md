@@ -6,7 +6,9 @@ Data visualization for lvr data
 ## Open Data
 
 ## Data Preprocessing
+資料轉檔：
 
+    iconv -c -f big5 -t big5 source.csv > target.csv
 
 
 ## HDFS
