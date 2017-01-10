@@ -1,12 +1,17 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import lvr.func as cf
+import common.func as cf
+from lvr_code import lvr_columns
+from common.func import ping
 
-data = pd.read_csv(
-    'C:\\Users\\cs\\Downloads\\OpenData_output\\2014S4\\A_lvr_land_A.CSV', encoding='utf-8')
-print(data.columns)
-data = data['單價每平方公尺']
+sourcedir = 'C:\\Users\\cs\\Downloads\\OpenData_output'
+seasondir = '2014S4'
+filename = 'A_lvr_land_A.CSV'
+column = lvr_columns[22] #'單價每平方公尺'
+
+data = pd.read_csv('{0}\\{1}\\{2}'.format(sourcedir, seasondir, filename), encoding='utf-8')
+data = data[column]/10000/ping
 
 plen = 50
 y = np.array(data)
@@ -19,6 +24,11 @@ print('price average =', cf.calaverage_ping(data))
 print('y.size =', y.size)
 plt.plot(x, y[0:plen], color='blue', label='price/m^2', linewidth=2)
 plt.legend()
+
+plt.xlabel('房屋')
+plt.ylabel('成交價 (萬/坪)')
+plt.title('台北市成交價圖', fontproperties='KaiTi')
+
 plt.show()
 
 print('max =', max(y))

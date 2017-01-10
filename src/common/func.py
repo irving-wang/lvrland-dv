@@ -33,6 +33,14 @@ def calcount(data):
         c += 1
     return c
 
+def calrange(data, bottom, top):
+    c = 0
+    for v in data:
+        if not isnan(v):
+            if v >= bottom and v < top:
+                c +=1
+    return c
+
 def calsum(data):
     res = 0.0
     for v in data:
@@ -51,10 +59,10 @@ def calaverage(data):
         res += v
     return res/c
 
+ping = 0.3025
+
 def calaverage_ping(data):
-    ping = 0.3025
     return calaverage(data)/ping
-    
 
 def funcpass():
     pass
