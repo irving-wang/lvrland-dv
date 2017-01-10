@@ -1,17 +1,14 @@
 # lvrland-dv
 Data visualization for lvr data 
 
-資料來源為內政部不動產交易實價查詢網： [不動產成交案件實際資訊Open Data](http://plvr.land.moi.gov.tw/DownloadOpenData)
-
 ## Open Data
+
+資料來源為內政部不動產交易實價查詢網： [不動產成交案件實際資訊Open Data](http://plvr.land.moi.gov.tw/DownloadOpenData)
 
 ## Data Preprocessing
 資料轉檔：
 
     iconv -c -f big5 -t big5 source.csv > target.csv
-
-
-## HDFS
 
 ## Chart
 
@@ -65,6 +62,4 @@ or
 - 總面積
 - 成交量
 - 成交價
-
-## Geographic
 
