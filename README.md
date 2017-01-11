@@ -1,5 +1,5 @@
 # lvrland-dv
-Data visualization for lvr data 
+Data Visualization for lvr data 
 
 ## Open Data
 
@@ -8,7 +8,7 @@ Data visualization for lvr data
 ## Data Preprocessing
 資料轉檔：
 
-    iconv -c -f big5 -t big5 source.csv > target.csv
+    iconv -c -f big5 -t utf-8 source.csv > target.csv
 
 ## Chart
 

@@ -8,10 +8,11 @@ from common.func import ping
 sourcedir = 'C:\\Users\\cs\\Downloads\\OpenData_output'
 seasondir = '2014S4'
 filename = 'A_lvr_land_A.CSV'
-column = lvr_columns[22] #'單價每平方公尺'
+column = lvr_columns[22]  # '單價每平方公尺'
 
-data = pd.read_csv('{0}\\{1}\\{2}'.format(sourcedir, seasondir, filename), encoding='utf-8')
-data = data[column]/10000/ping
+data = pd.read_csv('{0}\\{1}\\{2}'.format(
+    sourcedir, seasondir, filename), encoding='utf-8')
+data = data[column] / 10000 / ping
 
 plen = 50
 y = np.array(data)

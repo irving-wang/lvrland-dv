@@ -11,9 +11,10 @@ print(lvr_columns[1])
 sourcedir = 'C:\\Users\\cs\\Downloads\\OpenData_output'
 seasondir = '2014S4'
 filename = 'A_lvr_land_A.CSV'
-column = lvr_columns[0] #'鄉鎮市區'
+column = lvr_columns[0]  # '鄉鎮市區'
 
-data = pd.read_csv('{0}\\{1}\\{2}'.format(sourcedir, seasondir, filename), encoding='utf-8')
+data = pd.read_csv('{0}\\{1}\\{2}'.format(
+    sourcedir, seasondir, filename), encoding='utf-8')
 print(data.columns)
 
 dists = cf.count_keys(data['鄉鎮市區'])

@@ -8,10 +8,12 @@ sourcedir = 'C:\\Users\\cs\\Downloads\\OpenData_output'
 seasondir = '2014S4'
 seasondir2 = '2015S4'
 filename = 'A_lvr_land_A.CSV'
-column = lvr_columns[0] #'鄉鎮市區'
+column = lvr_columns[0]  # '鄉鎮市區'
 
-data = pd.read_csv('{0}\\{1}\\{2}'.format(sourcedir, seasondir, filename), encoding='utf-8')
-data2 = pd.read_csv('{0}\\{1}\\{2}'.format(sourcedir, seasondir2, filename), encoding='utf-8')
+data = pd.read_csv('{0}\\{1}\\{2}'.format(
+    sourcedir, seasondir, filename), encoding='utf-8')
+data2 = pd.read_csv('{0}\\{1}\\{2}'.format(
+    sourcedir, seasondir2, filename), encoding='utf-8')
 
 dists = cf.count_keys(data[column])
 # dists = sorted(dists.items())
