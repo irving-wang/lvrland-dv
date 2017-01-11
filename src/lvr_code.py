@@ -66,3 +66,8 @@ lvr_6city = {
 
 def get_lvr_csv(path, code):
     return '{0}\\{1}_lvr_land_A.CSV'.format(path, code)
+
+def get_roc_year(adys):
+    return str(int(adys[:4])-1911)+adys[4:6]
+
+# print(get_roc_year('2016S4'))

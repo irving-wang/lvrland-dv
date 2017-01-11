@@ -1,18 +1,18 @@
+import os
 import pandas as pd
 import matplotlib.pyplot as plt
-import common.func as cf
+import lvr_func as cf
+import lvr_environment as cenv
 from lvr_code import lvr_columns
-from common.func import ping
+from lvr_func import ping
 
-
-sourcedir = 'C:\\Users\\cs\\Downloads\\OpenData_output'
-seasondir = '2014S4'
-filename = 'A_lvr_land_A.CSV'
+sdir = cenv.datadir
 column = lvr_columns[22]  # '單價每平方公尺'
+s1 = '2015S4'
 
-data = pd.read_csv('{0}\\{1}\\{2}'.format(
-    sourcedir, seasondir, filename), encoding='utf-8')
-data = data[column] / 10000 / ping
+data = pd.read_csv('{0}{sep}{1}{sep}{2}_lvr_land_A.CSV'.format(
+    sdir, s1, 'A', sep=os.path.sep), encoding='utf-8')
+data = data[column] / 10000.0 / ping
 print(len(data))
 
 # Data to plot
@@ -26,7 +26,7 @@ print(sizes)
 # Plot
 plt.pie(sizes, explode=explode, labels=labels, colors=colors,
         autopct='%1.1f%%', shadow=True, startangle=140)
-plt.title('台北市房屋成交價格', fontproperties='KaiTi')
+plt.title('台北市房屋成交價格', fontproperties=cenv.kai_title)
 # plt.axis('equal')
 
 plt.show()
